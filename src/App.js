@@ -10,7 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 function App() {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    fetch("https://api.github.com/users/nlagdhir")
+    fetch("https://api.github.com/users/tareq-dev")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);

@@ -8,21 +8,26 @@ function UserCard({ user }) {
   const [searchRepo, setSearchRepo] = useState("");
   const navigate = useNavigate();
   const url = user?.repos_url;
-  console.log(url)
-  useEffect(() => {
-    fetch(`${url}`)
-      .then((res) => res.json())
-      .then((data) => setRepos(data));
-  }, [user,url]);
 
+  useEffect(() => {
+    if (url) {
+      fetch(`${url}`)
+        .then((res) => res.json())
+        .then((data) => setRepos(data));
+    }
+  }, [user, url]);
   const handleDetails = (id) => {
     navigate(`/repo/${id}`);
   };
-//new
+  //new
   return (
-    <div className="bg-white rounded-3xl shadow-xl p-1">
+    <div className="bg-[rgb(153,216,212)]  rounded-3xl shadow-xl p-1">
       <div className="relative">
-        <img className="rounded-xl h-[336] w-[300] md:h-[300px] md:w-[1024px]" src={banner} alt="banner" />
+        <img
+          className="rounded-xl h-[336] w-[300] md:h-[300px] md:w-[1024px]"
+          src={banner}
+          alt="banner"
+        />
         <div className="avatar absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="w-32 rounded-full ring ring-red-500 ring-offset-base-100 ring-offset-2">
             <img src={user.avatar_url} alt="avatar" />
@@ -47,7 +52,7 @@ function UserCard({ user }) {
       </div>
       <div className="flex justify-center px-4 py-4">
         <Link
-          to="https://github.com/brynary?tab=repositories"
+          to="https://github.com/tareq-dev?tab=repositories"
           target="_blank"
           className="flex flex-col items-center justify-center ml-2"
         >
@@ -59,7 +64,7 @@ function UserCard({ user }) {
           <p className="text-sm font-medium text-gray-600">gist</p>
         </div>
         <Link
-          to="https://github.com/brynary"
+          to="https://github.com/tareq-dev"
           target="_blank"
           className="flex flex-col items-center justify-center mx-5"
         >
@@ -67,7 +72,7 @@ function UserCard({ user }) {
           <p className="text-sm font-medium text-gray-600">followers</p>
         </Link>
         <Link
-          to="https://github.com/brynary"
+          to="https://github.com/tareq-dev"
           target="_blank"
           className="flex flex-col items-center justify-center mr-2"
         >
@@ -85,7 +90,8 @@ function UserCard({ user }) {
       </div>
       <h1 className="font-bold text-md text-center py-5">All Repositories</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-5 md:px-5 py-5">
-        {repos?.filter((value) => {
+        {repos
+          ?.filter((value) => {
             if (searchRepo === "") {
               return value;
             } else if (
@@ -98,7 +104,7 @@ function UserCard({ user }) {
             <button
               key={i}
               onClick={() => handleDetails(repo?.id)}
-              className="border-2 rounded-lg px-4 py-2 text-center font-bold my-1 shadow-md"
+              className="bg-white rounded-lg px-4 py-2 text-center font-bold my-1 shadow-md"
             >
               {repo?.name.charAt(0).toUpperCase() +
                 repo?.name.slice(1).replaceAll("_", " ").replaceAll("-", " ")}

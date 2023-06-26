@@ -6,6 +6,7 @@ This project involves using the GitHub API to fetch repositories and displaying 
 https://my-github-gallary.vercel.app
 
 ## Screenshots
+![my-github-gallary vercel app_](https://github.com/Tareq-dev/github-info/assets/76741381/ab3b61e8-5851-4be8-a46e-fec96aba0a2e)
 
 ## Use Package
 - React

@@ -48,7 +48,7 @@ function RepoDetails({ user }) {
           </div>
           <div className="flex justify-center px-4 py-4">
             <Link
-              to="https://github.com/brynary?tab=repositories"
+              to="https://github.com/Tareq-dev"
               target="_blank"
               className="flex flex-col items-center justify-center ml-2"
             >

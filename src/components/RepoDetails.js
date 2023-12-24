@@ -60,7 +60,7 @@ function RepoDetails({ user }) {
               <p className="text-sm font-medium text-gray-600">gist</p>
             </div>
             <Link
-              to="https://github.com/brynary"
+              to="https://github.com/Tareq-dev"
               target="_blank"
               className="flex flex-col items-center justify-center mx-5"
             >
@@ -68,7 +68,7 @@ function RepoDetails({ user }) {
               <p className="text-sm font-medium text-gray-600">followers</p>
             </Link>
             <Link
-              to="https://github.com/brynary"
+              to="https://github.com/Tareq-dev"
               target="_blank"
               className="flex flex-col items-center justify-center mr-2"
             >
